@@ -6,8 +6,8 @@ import {getMovies, editMovie, deleteMovies} from '../action';
 class Dashboard extends React.Component {
 
     componentDidMount = () => this.props.getMovies(localStorage.getItem('token'));
-    handleDelete = (id) => {
-        this.props.deleteMovies(id)
+    handleDelete = async (id) => {
+        await this.props.deleteMovies(id)
         this.props.getMovies(localStorage.getItem('token'))
     }
 
